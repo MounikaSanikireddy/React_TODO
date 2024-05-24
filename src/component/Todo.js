@@ -111,8 +111,8 @@ function Todo()
 
 
             <div className="zoom-buttons">
-                <button className="btn btn-primary" onClick={zoomIn}>+</button>
-                <button className="btn btn-primary" onClick={zoomOut}>-</button>
+                <button className="ZoomButton" onClick={zoomIn}>+</button>
+                <button className="ZoomButton" onClick={zoomOut}>-</button>
             </div>
             <div className='body'>
                 <h1>Todo</h1>
@@ -136,10 +136,10 @@ function Todo()
                             onChange={(e) => setSelectedDate(new Date(e.target.value))}
                             placeholder={selectedDate ? 'Selected Date' : 'Select Date'}
                         />
-                        <button className='' type="submit">
+                        <button className='add' type="submit">
                             ADD
                         </button>
-                        <input type="search" placeholder='search by name' value={search} onChange={(e) => setSearch(e.target.value)} />
+                        <input type="search" placeholder='Search by Name' value={search} onChange={(e) => setSearch(e.target.value)} />
                     </div>
                     <div className='result'>
                         <hr />
@@ -158,10 +158,10 @@ function Todo()
                                     ) : (
                                         <span>{item.text}</span>
                                     )}
-                                    <button className="" type="button" onClick={() => handleDelete(item.id)}>
+                                    <button className="del" type="button" onClick={() => handleDelete(item.id)}>
                                         DELETE
                                     </button>
-                                    <button className="" type="button" onClick={() =>
+                                    <button className="edit" type="button" onClick={() =>
                                     {
                                         setEditId(item.id);
                                         setEditText(item.text);
@@ -178,7 +178,7 @@ function Todo()
             </div>
             <div className='calci'>
             <button className="" id='calender' onClick={toggleCalendar}>
-                    {showCalendar ? "Hide calender" : "Calendar"}
+                    {showCalendar ? "Hide" : "Calendar"}
                 </button>
                 {showCalendar && (
                     <div className="calendar-container ">
